@@ -1,0 +1,360 @@
+---
+title: "Cu2+ Toxicity in plants"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  html_notebook: default
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+# Experiment Description
+
+The experiment aims to measure the effect of Cu2+ on the growth of plants. For this purpose, a sample of garden cress seeds were planted in petri dishes infused with different concentrations of **CuSO4.5H2O**. The concentrations were **3.125mg/l, 6.25mg/l, 12.5mg/l, 25mg/l, 50mg/l and 100mg/l**, **three** petri dishes for each concentration with **22-25** seeds planted in each petri dish. A control sample of 3 petri dishes with 22-25 seeds infused with distilled water was also planted.
+
+After a week, each petri dish was taken out and all the seeds were measured by root length in mm, stem length in mm and the sum of both was calculated also in mm. It was also noted which ones had branched roots as this is also supposed to be an indicator for the presence of a toxicant.
+
+Experiment was held as a practical class part of the Ecological monitoring discipline at Faculty of Biology, Sofia University.
+
+## Task #1 and #2
+
+Calculate mean and standard deviation of the control sample and each concentration. Calculate the percentage of inhibition - if the control sample has a mean of X and the current sample has a mean of Y, then the growth percent compared to the control would be (Y/X)\*100 and the inhibition percent would be 100 - (Y/X)\*100.
+
+```{r}
+# Reading control sample data
+k = read.csv('../data/K.csv')
+k
+```
+
+```{r}
+# Control sample root_size mean and standard deviation
+control_root = mean(k$root_size)
+control_root
+sd(k$root_size)
+```
+
+```{r}
+# Control sample stem_size mean and standard deviation
+control_stem = mean(k$stem_size)
+control_stem
+sd(k$stem_size)
+```
+
+```{r}
+# Control sample sum mean and standard deviation
+control_sum = mean(k$sum)
+control_sum
+sd(k$sum)
+```
+
+```{r}
+# Reading data for 100mg/l concentration of Cu2+
+conc_100mg = read.csv('../data/100mg.csv')
+conc_100mg
+```
+
+```{r}
+# 100mg/l root_size mean and standard deviation
+root_100mg = mean(conc_100mg$root_size)
+root_100mg
+sd(conc_100mg$root_size)
+
+# Root growth inhibition percentage, compared to control sample
+root_limit_100mg = 100 - (root_100mg/control_root)*100
+root_limit_100mg
+```
+
+```{r}
+# 100mg/l stem_size mean and standard deviation
+stem_100mg = mean(conc_100mg$stem_size)
+stem_100mg
+sd(conc_100mg$stem_size)
+
+# Stem growth inhibition percentage, compared to control sample
+stem_limit_100mg = 100 - (stem_100mg/control_stem)*100
+stem_limit_100mg
+```
+
+```{r}
+# 100mg/l sum mean and standard deviation
+sum_100mg = mean(conc_100mg$sum)
+sum_100mg
+sd(conc_100mg$sum)
+
+# Overall growth inhibition percentage, compared to control sample
+sum_limit_100mg = 100 - (sum_100mg/control_sum)*100
+sum_limit_100mg
+```
+
+
+```{r}
+# Reading data for 50mg/l concentration of Cu2+
+conc_50mg = read.csv('../data/50mg.csv')
+conc_50mg
+```
+
+```{r}
+# 50mg/l root_size mean and standard deviation
+root_50mg = mean(conc_50mg$root_size)
+root_50mg
+sd(conc_50mg$root_size)
+
+# Root growth inhibition percentage, compared to control sample
+root_limit_50mg = 100 - (root_50mg/control_root)*100
+root_limit_50mg
+```
+
+```{r}
+# 50mg/l stem_size mean and standard deviation
+stem_50mg = mean(conc_50mg$stem_size)
+stem_50mg
+sd(conc_50mg$stem_size)
+
+# Stem growth inhibition percentage, compared to control sample
+stem_limit_50mg = 100 - (stem_50mg/control_stem)*100
+stem_limit_50mg
+```
+
+```{r}
+# 50mg/l sum mean and standard deviation
+sum_50mg = mean(conc_50mg$sum)
+sum_50mg
+sd(conc_50mg$sum)
+
+# Overall growth inhibition percentage, compared to control sample
+sum_limit_50mg = 100 - (sum_50mg/control_sum)*100
+sum_limit_50mg
+```
+
+```{r}
+# Reading data for 25mg/l concentration of Cu2+
+conc_25mg = read.csv('../data/25mg.csv')
+conc_25mg
+```
+
+```{r}
+# 25mg/l root_size mean + standard deviation
+root_25mg = mean(conc_25mg$root_size)
+root_25mg
+sd(conc_25mg$root_size)
+
+# Root growth inhibition percentage, compared to control sample
+root_limit_25mg = 100 - (root_25mg/control_root)*100
+root_limit_25mg
+```
+
+
+```{r}
+# 25mg/l stem_size mean + standard deviation
+stem_25mg = mean(conc_25mg$stem_size)
+stem_25mg
+sd(conc_25mg$stem_size)
+
+# Stem growth inhibition percentage, compared to control sample
+stem_limit_25mg = 100 - (stem_25mg/control_stem)*100
+stem_limit_25mg
+```
+
+```{r}
+# 25mg/l sum mean + standard deviation
+sum_25mg = mean(conc_25mg$sum)
+sum_25mg
+sd(conc_25mg$sum)
+
+# Overall growth inhibition percentage, compared to control sample
+sum_limit_25mg = 100 - (stem_25mg/control_sum)*100
+sum_limit_25mg
+```
+
+```{r}
+# Reading data for 12.5mg/l concentration of Cu2+
+conc_12.5mg = read.csv('../data/12.5mg.csv')
+conc_12.5mg
+```
+
+
+```{r}
+# 12.5mg/l root_size mean + standard deviation
+root_12.5mg = mean(conc_12.5mg$root_size)
+root_12.5mg
+sd(conc_12.5mg$root_size)
+
+# Root growth inhibition percentage, compared to control sample
+root_limit_12.5mg = 100 - (root_12.5mg/control_root)*100
+root_limit_12.5mg
+```
+
+```{r}
+# 12.5mg/l stem_size mean + standard deviation
+stem_12.5mg = mean(conc_12.5mg$stem_size)
+stem_12.5mg
+sd(conc_12.5mg$stem_size)
+
+# Stem growth inhibition percentage, compared to control sample
+stem_limit_12.5mg = 100 - (stem_12.5mg/control_stem)*100
+stem_limit_12.5mg
+```
+
+```{r}
+# 12.5mg/l sum mean + standard deviation
+sum_12.5mg = mean(conc_12.5mg$sum)
+sum_12.5mg
+sd(conc_12.5mg$sum)
+
+# Overall growth inhibition percentage, compared to control sample
+sum_limit_12.5mg = 100 - (sum_12.5mg/control_sum)*100
+sum_limit_12.5mg
+```
+
+```{r}
+# Reading data for 6.25mg/l concentration of Cu2+
+conc_6.25mg = read.csv('../data/6.25mg.csv')
+conc_6.25mg
+```
+
+
+```{r}
+# 6.25mg/l root_size mean + standard deviation
+root_6.25mg = mean(conc_6.25mg$root_size)
+root_6.25mg
+sd(conc_6.25mg$root_size)
+
+# Root growth inhibition percentage, compared to control sample
+root_limit_6.25mg = 100 - (root_6.25mg/control_root)*100
+root_limit_6.25mg
+```
+
+```{r}
+# 6.25mg/l stem_size mean + standard deviation
+stem_6.25mg = mean(conc_6.25mg$stem_size)
+stem_6.25mg
+sd(conc_6.25mg$stem_size)
+
+# Stem growth inhibition percentage, compared to control sample
+stem_limit_6.25mg = 100 - (stem_6.25mg/control_stem)*100
+stem_limit_6.25mg
+```
+
+
+```{r}
+# 6.25mg/l sum mean + standard deviation
+sum_6.25mg = mean(conc_6.25mg$sum)
+sum_6.25mg
+sd(conc_6.25mg$sum)
+
+# Overall growth inhibition percentage, compared to control sample
+sum_limit_6.25mg = 100 - (sum_6.25mg/control_sum)*100
+sum_limit_6.25mg
+```
+
+```{r}
+# Reading data for 3.125mg/l concentration of Cu2+
+conc_3.125mg = read.csv('../data/3.125mg.csv')
+conc_3.125mg
+```
+```{r}
+# 3.125mg/l root_size mean + standard deviation
+root_3.125mg = mean(conc_3.125mg$root_size)
+root_3.125mg
+sd(conc_3.125mg$root_size)
+
+# Root growth inhibition percentage, compared to control sample
+root_limit_3.125mg = 100 - (root_3.125mg/control_root)*100
+root_limit_3.125mg
+```
+
+```{r}
+# 3.125mg/l stem_size mean and standard deviation
+stem_3.125mg = mean(conc_3.125mg$stem_size)
+stem_3.125mg
+sd(conc_3.125mg$stem_size)
+
+# Stem growth inhibition percentage, compared to control sample
+stem_limit_3.125mg = 100 - (stem_3.125mg/control_stem)*100
+stem_limit_3.125mg
+```
+
+```{r}
+# 3.125mg/l sum mean and standard deviation
+sum_3.125mg = mean(conc_3.125mg$sum)
+sum_3.125mg
+sd(conc_3.125mg$sum)
+
+# Overall growth inhibition percentage, compared to control sample
+sum_limit_3.125mg = 100 - (sum_3.125mg/control_sum)*100
+sum_limit_3.125mg
+```
+
+## Task #3, #4 and #5
+
+Plot the inhibition percentage as a function of the concentration. Create a linear model approximation and get the coefficients. Use the coefficients to calculate the concentration needed to cause a 50% growth inhibition.
+
+```{r}
+x = c(3.125, 6.25, 12.5, 25, 50, 100)
+y_root = c(root_limit_3.125mg, root_limit_6.25mg, root_limit_12.5mg, root_limit_25mg, root_limit_50mg, root_limit_100mg)
+y_stem = c(stem_limit_3.125mg, stem_limit_6.25mg, stem_limit_12.5mg, stem_limit_25mg, stem_limit_50mg, stem_limit_100mg)
+y_sum = c(sum_limit_3.125mg, sum_limit_6.25mg, sum_limit_12.5mg, sum_limit_25mg, sum_limit_50mg, sum_limit_100mg)
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+df_root = data.frame(x,y_root)
+ggplot(df_root, aes(x=factor(x), y=y_root, group=1)) + geom_line(color='brown') + geom_point() + geom_text(aes(label=y_root)) + geom_smooth(method='lm') + ggtitle('Inhibition percentage for root') + ylab('Inhibition percentage') + xlab('Concentration of Cu2+ in mg/l')
+model_root = lm(y_root ~ x, data = df_root)
+model_root
+b0_root = summary(model_root)$coefficients[1,1]
+b1_root = summary(model_root)$coefficients[2,1]
+ec50_root = (50 - b0_root)/b1_root
+ec50_root
+```
+
+```{r}
+df_stem = data.frame(x,y_stem)
+ggplot(df_stem, aes(x=factor(x), y=y_stem, group=1)) + geom_line(color='darkgreen') + geom_point() + geom_text(aes(label=y_stem)) + stat_smooth(method='lm') + ggtitle('Inhibition percentage for stem') + ylab('Inhibition percentage') + xlab('Concentration of Cu2+ in mg/l')
+model_stem = lm(y_stem ~ x, data = df_stem)
+model_stem
+b0_stem = summary(model_stem)$coefficients[1,1]
+b1_stem = summary(model_stem)$coefficients[2,1]
+ec50_stem = (50 - b0_stem)/b1_stem
+ec50_stem
+```
+
+```{r}
+df_sum = data.frame(x,y_sum)
+ggplot(df_sum, aes(x=factor(x), y=y_sum, group=1)) + geom_point() + geom_text(aes(label=y_sum)) + stat_smooth(method='lm') + ggtitle('Inhibition percentage for root + stem') + ylab('Inhibition percentage') + xlab('Concentration of Cu2+ in mg/l')
+model_sum = lm(y_sum ~ x, data = df_sum)
+model_sum
+b0_sum = summary(model_sum)$coefficients[1,1]
+b1_sum = summary(model_sum)$coefficients[2,1]
+ec50_sum = (50 - b0_sum)/b1_sum
+ec50_sum
+```
+
+## Task #6 and #7
+
+Compare the concentration values causing a 50% inhibition in the root, stem and overall. Conclude which part of the plant is most susceptible to the toxicant.
+
+```{r}
+ec50 = c(ec50_root,ec50_stem,ec50_sum)
+names = c("root", "stem", "sum")
+df_ec50 = data.frame(names, ec50)
+df_ec50
+```
+
+In this case we need the lowest concentration able to create a 50% growth inhibition. The table shows this is the value associated with the root - i.e. the root is most susceptible to the toxicant.
+
+## Bonus
+
+Plot the number of branched roots for each concentration.
+
+```{r}
+branched = c(sum(conc_3.125mg$root_branching), sum(conc_6.25mg$root_branching), sum(conc_12.5mg$root_branching), sum(conc_25mg$root_branching), sum(conc_50mg$root_branching), sum(conc_100mg$root_branching))
+df_branched = data.frame(x, branched)
+ggplot(df_branched, aes(x=factor(x), y=branched, group=1)) + geom_point() + geom_text(aes(label=branched), vjust = -0.5) + ggtitle('Branching for each concentration') + ylab('Number of branched roots') + xlab('Concentration of Cu2+ in mg/l')
+```
