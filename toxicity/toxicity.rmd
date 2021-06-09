@@ -1,6 +1,10 @@
 ---
 title: "Cu2+ Toxicity in plants"
-output: rmarkdown::github_document
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  html_notebook: default
 ---
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
@@ -301,7 +305,7 @@ library(ggplot2)
 
 ```{r}
 df_root = data.frame(x,y_root)
-ggplot(df_root, aes(x=factor(x), y=y_root, group=1)) + geom_line(color='brown') + geom_point() + geom_text(aes(label=y_root)) + geom_smooth(method='lm') + ggtitle('Inhibition percentage for root') + ylab('Inhibition percentage') + xlab('Concentration of Cu2+ in mg/l')
+ggplot(df_root, aes(x=factor(x), y=y_root, group=1)) + geom_point() + geom_text(aes(label=y_root)) + stat_smooth(method='lm') + ggtitle('Inhibition percentage for root') + ylab('Inhibition percentage') + xlab('Concentration of Cu2+ in mg/l')
 model_root = lm(y_root ~ x, data = df_root)
 model_root
 b0_root = summary(model_root)$coefficients[1,1]
@@ -312,7 +316,7 @@ ec50_root
 
 ```{r}
 df_stem = data.frame(x,y_stem)
-ggplot(df_stem, aes(x=factor(x), y=y_stem, group=1)) + geom_line(color='darkgreen') + geom_point() + geom_text(aes(label=y_stem)) + stat_smooth(method='lm') + ggtitle('Inhibition percentage for stem') + ylab('Inhibition percentage') + xlab('Concentration of Cu2+ in mg/l')
+ggplot(df_stem, aes(x=factor(x), y=y_stem, group=1)) + geom_point() + geom_text(aes(label=y_stem)) + stat_smooth(method='lm') + ggtitle('Inhibition percentage for stem') + ylab('Inhibition percentage') + xlab('Concentration of Cu2+ in mg/l')
 model_stem = lm(y_stem ~ x, data = df_stem)
 model_stem
 b0_stem = summary(model_stem)$coefficients[1,1]
@@ -352,5 +356,5 @@ Plot the number of branched roots for each concentration.
 ```{r}
 branched = c(sum(conc_3.125mg$root_branching), sum(conc_6.25mg$root_branching), sum(conc_12.5mg$root_branching), sum(conc_25mg$root_branching), sum(conc_50mg$root_branching), sum(conc_100mg$root_branching))
 df_branched = data.frame(x, branched)
-ggplot(df_branched, aes(x=factor(x), y=branched, group=1)) + geom_point() + geom_text(aes(label=branched), vjust = -0.5) + ggtitle('Branching for each concentration') + ylab('Number of branched roots') + xlab('Concentration of Cu2+ in mg/l')
+ggplot(df_branched, aes(x=factor(x), y=branched, group=1)) + geom_line(color="brown") + geom_point() + geom_text(aes(label=branched), vjust = -0.5) + ggtitle('Branching for each concentration') + ylab('Number of branched roots') + xlab('Concentration of Cu2+ in mg/l')
 ```

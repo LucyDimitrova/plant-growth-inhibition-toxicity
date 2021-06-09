@@ -1,0 +1,1570 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Cu2+ Toxicity in plants},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Cu2+ Toxicity in plants}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+This is an \href{http://rmarkdown.rstudio.com}{R Markdown} Notebook.
+When you execute code within the notebook, the results appear beneath
+the code.
+
+Try executing this chunk by clicking the \emph{Run} button within the
+chunk or by placing your cursor inside it and pressing
+\emph{Cmd+Shift+Enter}.
+
+\hypertarget{experiment-description}{%
+\section{Experiment Description}\label{experiment-description}}
+
+The experiment aims to measure the effect of Cu2+ on the growth of
+plants. For this purpose, a sample of garden cress seeds were planted in
+petri dishes infused with different concentrations of
+\textbf{CuSO4.5H2O}. The concentrations were \textbf{3.125mg/l,
+6.25mg/l, 12.5mg/l, 25mg/l, 50mg/l and 100mg/l}, \textbf{three} petri
+dishes for each concentration with \textbf{22-25} seeds planted in each
+petri dish. A control sample of 3 petri dishes with 22-25 seeds infused
+with distilled water was also planted.
+
+After a week, each petri dish was taken out and all the seeds were
+measured by root length in mm, stem length in mm and the sum of both was
+calculated also in mm. It was also noted which ones had branched roots
+as this is also supposed to be an indicator for the presence of a
+toxicant.
+
+Experiment was held as a practical class part of the Ecological
+monitoring discipline at Faculty of Biology, Sofia University.
+
+\hypertarget{task-1-and-2}{%
+\subsection{Task \#1 and \#2}\label{task-1-and-2}}
+
+Calculate mean and standard deviation of the control sample and each
+concentration. Calculate the percentage of inhibition - if the control
+sample has a mean of X and the current sample has a mean of Y, then the
+growth percent compared to the control would be (Y/X)*100 and the
+inhibition percent would be 100 - (Y/X)*100.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Reading control sample data}
+\NormalTok{k }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{\textquotesingle{}../data/K.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{k}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     X root_size stem_size root_branching sum
+## 1   1        70        32              0 102
+## 2   2        68        28              0  96
+## 3   3        94        22              0 116
+## 4   4        70        24              0  94
+## 5   5        79        36              0 115
+## 6   6        53        28              1  81
+## 7   7        58        28              0  86
+## 8   8        31        14              0  45
+## 9   9        75        30              0 105
+## 10 10        35        26              0  61
+## 11 11        65        16              0  81
+## 12 12        51        23              0  74
+## 13 13        48        19              0  67
+## 14 14        60        20              0  80
+## 15 15        48        25              0  73
+## 16 16        40        22              0  62
+## 17 17        78        25              0 103
+## 18 18        44        26              0  70
+## 19 19        71        33              0 104
+## 20 20        77        25              0 102
+## 21 21        24        17              0  41
+## 22 22       115        32              0 147
+## 23 23        92        25              0 117
+## 24 24       116        25              0 141
+## 25 25        81        40              0 121
+## 26 26        78        31              0 109
+## 27 27        99        23              0 122
+## 28 28        91        19              0 110
+## 29 29        71        20              0  91
+## 30 30        72        18              0  90
+## 31 31        79        35              0 114
+## 32 32        66        22              0  88
+## 33 33       115        34              0 149
+## 34 34        42        23              0  65
+## 35 35        21        20              0  41
+## 36 36        72        26              0  98
+## 37 37        45        36              0  81
+## 38 38        35        21              0  56
+## 39 39        56        31              0  87
+## 40 40        92        26              0 118
+## 41 41        51        27              0  78
+## 42 42        30        12              0  42
+## 43 43        52        23              0  75
+## 44 44        65        21              0  86
+## 45 45        62        30              0  92
+## 46 46         3        24              0  27
+## 47 47        34        12              0  46
+## 48 48        77        25              0 102
+## 49 49        32        28              0  60
+## 50 50        76        27              0 103
+## 51 51        29        19              0  48
+## 52 52        90        30              0 120
+## 53 53        65        29              0  94
+## 54 54        76        25              0 101
+## 55 55        77        34              0 111
+## 56 56        81        30              0 111
+## 57 57        10        29              0  39
+## 58 58        30        22              0  52
+## 59 59        60        20              0  80
+## 60 60        87        26              0 113
+## 61 61        27        23              0  50
+## 62 62        65        33              0  98
+## 63 63        96        32              0 128
+## 64 64        95        30              0 125
+## 65 65        75        29              0 104
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Control sample root\_size mean and standard deviation}
+\NormalTok{control\_root }\OtherTok{=} \FunctionTok{mean}\NormalTok{(k}\SpecialCharTok{$}\NormalTok{root\_size)}
+\NormalTok{control\_root}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 63.41538
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(k}\SpecialCharTok{$}\NormalTok{root\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 25.321
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Control sample stem\_size mean and standard deviation}
+\NormalTok{control\_stem }\OtherTok{=} \FunctionTok{mean}\NormalTok{(k}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\NormalTok{control\_stem}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 25.63077
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(k}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.893771
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Control sample sum mean and standard deviation}
+\NormalTok{control\_sum }\OtherTok{=} \FunctionTok{mean}\NormalTok{(k}\SpecialCharTok{$}\NormalTok{sum)}
+\NormalTok{control\_sum}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 89.04615
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(k}\SpecialCharTok{$}\NormalTok{sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 28.27843
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Reading data for 100mg/l concentration of Cu2+}
+\NormalTok{conc\_100mg }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{\textquotesingle{}../data/100mg.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{conc\_100mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     X root_size stem_size root_branching sum
+## 1   1        11        22              0  33
+## 2   2         0        18              0  18
+## 3   3         6        25              0  31
+## 4   4         4        22              0  26
+## 5   5         4        24              0  28
+## 6   6         8        18              0  26
+## 7   7        14        18              0  32
+## 8   8         5        10              0  15
+## 9   9         3         7              0  10
+## 10 10         4        15              0  19
+## 11 11         7        15              0  22
+## 12 12         8        19              0  27
+## 13 13         5         4              0   9
+## 14 14         9        29              0  38
+## 15 15         5        11              0  16
+## 16 16         1        26              0  27
+## 17 17         9        30              0  39
+## 18 18         7        25              0  32
+## 19 19         9        15              0  24
+## 20 20         6        15              0  21
+## 21 21         5         9              0  14
+## 22 22         2        21              0  23
+## 23 23         1        24              0  25
+## 24 24         5        20              0  25
+## 25 25         3        11              0  14
+## 26 26         8         9              0  17
+## 27 27         5        10              0  15
+## 28 28         5        23              0  28
+## 29 29        10        26              0  36
+## 30 30         4        23              0  27
+## 31 31         4        26              0  30
+## 32 32        10        26              0  36
+## 33 33         7        30              0  37
+## 34 34         4        26              0  30
+## 35 35         8        33              0  41
+## 36 36         5        26              1  31
+## 37 37         4        20              0  24
+## 38 38        25         9              0  34
+## 39 39         9        26              0  35
+## 40 40         6        27              0  33
+## 41 41         2        16              0  18
+## 42 42         6        22              1  28
+## 43 43         4        11              1  15
+## 44 44         5        10              0  15
+## 45 45        22        31              1  53
+## 46 46         4        27              0  31
+## 47 47        26        24              0  50
+## 48 48        16        23              0  39
+## 49 49        11        31              0  42
+## 50 50        14        19              0  33
+## 51 51        15        27              1  42
+## 52 52        10        24              1  34
+## 53 53         4        20              0  24
+## 54 54        20        25              0  45
+## 55 55        31        19              0  50
+## 56 56        23        29              0  52
+## 57 57         3        31              0  34
+## 58 58        13        15              0  28
+## 59 59        11        29              0  40
+## 60 60         5        22              0  27
+## 61 61         6        24              1  30
+## 62 62        15        11              1  26
+## 63 63         0         3              0   3
+## 64 64        10        21              0  31
+## 65 65         4        15              0  19
+## 66 66        14        32              0  46
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 100mg/l root\_size mean and standard deviation}
+\NormalTok{root\_100mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_100mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\NormalTok{root\_100mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 8.318182
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_100mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6.450186
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Root growth inhibition percentage, compared to control sample}
+\NormalTok{root\_limit\_100mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (root\_100mg}\SpecialCharTok{/}\NormalTok{control\_root)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{root\_limit\_100mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 86.88302
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 100mg/l stem\_size mean and standard deviation}
+\NormalTok{stem\_100mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_100mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\NormalTok{stem\_100mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 20.51515
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_100mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7.423958
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Stem growth inhibition percentage, compared to control sample}
+\NormalTok{stem\_limit\_100mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (stem\_100mg}\SpecialCharTok{/}\NormalTok{control\_stem)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{stem\_limit\_100mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 19.95889
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 100mg/l sum mean and standard deviation}
+\NormalTok{sum\_100mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_100mg}\SpecialCharTok{$}\NormalTok{sum)}
+\NormalTok{sum\_100mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 28.83333
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_100mg}\SpecialCharTok{$}\NormalTok{sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10.74256
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Overall growth inhibition percentage, compared to control sample}
+\NormalTok{sum\_limit\_100mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (sum\_100mg}\SpecialCharTok{/}\NormalTok{control\_sum)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{sum\_limit\_100mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 67.61979
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Reading data for 50mg/l concentration of Cu2+}
+\NormalTok{conc\_50mg }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{\textquotesingle{}../data/50mg.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{conc\_50mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     X root_size stem_size root_branching sum
+## 1   1        32        29              0  61
+## 2   2        20        39              1  59
+## 3   3        20        26              0  46
+## 4   4        10        32              1  42
+## 5   5         6        20              1  26
+## 6   6         8        18              0  26
+## 7   7        22        30              1  52
+## 8   8        30        22              1  52
+## 9   9        27        29              1  56
+## 10 10        33        24              1  57
+## 11 11        21        39              0  60
+## 12 12        21        30              1  51
+## 13 13        18        18              1  36
+## 14 14        45        36              0  81
+## 15 15         7        38              0  45
+## 16 16        17        34              1  51
+## 17 17         7        34              0  41
+## 18 18        33        37              0  70
+## 19 19        51        30              0  81
+## 20 20        38        25              0  63
+## 21 21         9        10              0  19
+## 22 22         5         3              0   8
+## 23 23        14        35              1  49
+## 24 24        14        34              0  48
+## 25 25        10        26              0  36
+## 26 26        10        28              1  38
+## 27 27        12        36              0  48
+## 28 28        15        31              0  46
+## 29 29        21        24              0  45
+## 30 30         6        30              0  36
+## 31 31        15        22              1  37
+## 32 32        15        30              0  45
+## 33 33        38        28              1  66
+## 34 34        19        27              0  46
+## 35 35        16        28              0  44
+## 36 36        20        21              0  41
+## 37 37        17        26              1  43
+## 38 38        15        28              1  43
+## 39 39        14        28              0  42
+## 40 40        11        25              0  36
+## 41 41         8        18              0  26
+## 42 42        22        24              0  46
+## 43 43        12         8              0  20
+## 44 44        34        34              0  68
+## 45 45        18        25              0  43
+## 46 46        26        23              1  49
+## 47 47        17        24              0  41
+## 48 48        25        37              0  62
+## 49 49        22        29              1  51
+## 50 50        18        39              1  57
+## 51 51        20        35              0  55
+## 52 52        15        30              1  45
+## 53 53        20        29              0  49
+## 54 54        13        22              0  35
+## 55 55        18        30              1  48
+## 56 56        24        31              0  55
+## 57 57        12        18              1  30
+## 58 58        20        28              1  48
+## 59 59        16        26              1  42
+## 60 60        25        26              0  51
+## 61 61        51        27              0  78
+## 62 62        18         5              0  23
+## 63 63        73        11              0  84
+## 64 64        26         0              1  26
+## 65 65        20        33              1  53
+## 66 66        16        33              1  49
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 50mg/l root\_size mean and standard deviation}
+\NormalTok{root\_50mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_50mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\NormalTok{root\_50mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 20.4697
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_50mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 11.95147
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Root growth inhibition percentage, compared to control sample}
+\NormalTok{root\_limit\_50mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (root\_50mg}\SpecialCharTok{/}\NormalTok{control\_root)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{root\_limit\_50mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 67.72124
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 50mg/l stem\_size mean and standard deviation}
+\NormalTok{stem\_50mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_50mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\NormalTok{stem\_50mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 26.59091
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_50mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 8.494301
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Stem growth inhibition percentage, compared to control sample}
+\NormalTok{stem\_limit\_50mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (stem\_50mg}\SpecialCharTok{/}\NormalTok{control\_stem)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{stem\_limit\_50mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -3.746044
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 50mg/l sum mean and standard deviation}
+\NormalTok{sum\_50mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_50mg}\SpecialCharTok{$}\NormalTok{sum)}
+\NormalTok{sum\_50mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 47.06061
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_50mg}\SpecialCharTok{$}\NormalTok{sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14.81878
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Overall growth inhibition percentage, compared to control sample}
+\NormalTok{sum\_limit\_50mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (sum\_50mg}\SpecialCharTok{/}\NormalTok{control\_sum)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{sum\_limit\_50mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 47.15032
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Reading data for 25mg/l concentration of Cu2+}
+\NormalTok{conc\_25mg }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{\textquotesingle{}../data/25mg.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{conc\_25mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     X root_size stem_size root_branching sum
+## 1   1        28        34              0  62
+## 2   2        20        25              1  45
+## 3   3        22        26              1  48
+## 4   4        21        26              0  47
+## 5   5        18        32              1  50
+## 6   6        17        42              0  59
+## 7   7        61        29              0  90
+## 8   8        49        29              0  78
+## 9   9        36        30              0  66
+## 10 10        66        30              0  96
+## 11 11        27        17              0  44
+## 12 12        21        20              0  41
+## 13 13        58        28              0  86
+## 14 14        71        21              0  92
+## 15 15        23        30              1  53
+## 16 16        19        20              0  39
+## 17 17        40        25              0  65
+## 18 18        19        26              0  45
+## 19 19        43        23              1  66
+## 20 20        21        23              0  44
+## 21 21        45        14              0  59
+## 22 22        20        20              0  40
+## 23 23        10        22              0  32
+## 24 24        69        31              0 100
+## 25 25        68        32              0 100
+## 26 26        13        30              1  43
+## 27 27        12        30              0  42
+## 28 28        14        26              0  40
+## 29 29        37        22              0  59
+## 30 30        17        25              0  42
+## 31 31       117        40              0 157
+## 32 32        21        35              0  56
+## 33 33        27        32              1  59
+## 34 34        46        24              0  70
+## 35 35        23        28              0  51
+## 36 36        17        22              0  39
+## 37 37        13        20              0  33
+## 38 38        16        32              0  48
+## 39 39        36        30              0  66
+## 40 40        52        34              1  86
+## 41 41        41        21              0  62
+## 42 42        22        23              0  45
+## 43 43        28        29              1  57
+## 44 44        50        27              0  77
+## 45 45        34        28              1  62
+## 46 46        20        24              0  44
+## 47 47        57        35              0  92
+## 48 48        25        35              0  60
+## 49 49        17        26              0  43
+## 50 50        29        39              0  68
+## 51 51        42        29              0  71
+## 52 52        25        40              0  65
+## 53 53        50        38              0  88
+## 54 54        70        36              0 106
+## 55 55        40        33              0  73
+## 56 56        31        31              1  62
+## 57 57        37        30              0  67
+## 58 58        26        28              0  54
+## 59 59        55        25              0  80
+## 60 60        41        23              0  64
+## 61 61        20        13              0  33
+## 62 62        21        23              1  44
+## 63 63        57        24              0  81
+## 64 64        40        26              0  66
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 25mg/l root\_size mean + standard deviation}
+\NormalTok{root\_25mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_25mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\NormalTok{root\_25mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 34.85938
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_25mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 19.73464
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Root growth inhibition percentage, compared to control sample}
+\NormalTok{root\_limit\_25mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (root\_25mg}\SpecialCharTok{/}\NormalTok{control\_root)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{root\_limit\_25mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 45.0301
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 25mg/l stem\_size mean + standard deviation}
+\NormalTok{stem\_25mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_25mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\NormalTok{stem\_25mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 27.67188
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_25mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6.118031
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Stem growth inhibition percentage, compared to control sample}
+\NormalTok{stem\_limit\_25mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (stem\_25mg}\SpecialCharTok{/}\NormalTok{control\_stem)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{stem\_limit\_25mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -7.963498
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 25mg/l sum mean + standard deviation}
+\NormalTok{sum\_25mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_25mg}\SpecialCharTok{$}\NormalTok{sum)}
+\NormalTok{sum\_25mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 62.53125
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_25mg}\SpecialCharTok{$}\NormalTok{sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 22.12516
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Overall growth inhibition percentage, compared to control sample}
+\NormalTok{sum\_limit\_25mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (stem\_25mg}\SpecialCharTok{/}\NormalTok{control\_sum)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{sum\_limit\_25mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 68.92412
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Reading data for 12.5mg/l concentration of Cu2+}
+\NormalTok{conc\_12}\FloatTok{.5}\NormalTok{mg }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{\textquotesingle{}../data/12.5mg.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{conc\_12}\FloatTok{.5}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     X root_size stem_size root_branching sum
+## 1   1        47        21              0  68
+## 2   2        80        44              0 124
+## 3   3        60        35              0  95
+## 4   4        50        15              0  65
+## 5   5        95        33              0 128
+## 6   6        60        30              0  90
+## 7   7        74        38              0 112
+## 8   8        70        34              0 104
+## 9   9        65        39              0 104
+## 10 10       110        35              0 145
+## 11 11       105        40              0 145
+## 12 12        70        30              0 100
+## 13 13        55        30              0  85
+## 14 14        30        20              0  50
+## 15 15        85        32              0 117
+## 16 16        70        30              0 100
+## 17 17        70        35              0 105
+## 18 18        70        36              0 106
+## 19 19       108        35              0 143
+## 20 20        70        31              0 101
+## 21 21        25        23              0  48
+## 22 22        30        25              0  55
+## 23 23        60        27              0  87
+## 24 24        75        34              0 109
+## 25 25        75        35              0 110
+## 26 26        85        28              0 113
+## 27 27        65        34              0  99
+## 28 28        98        29              0 127
+## 29 29        65        28              0  93
+## 30 30        66        22              0  88
+## 31 31        72        26              0  98
+## 32 32        67        28              0  95
+## 33 33        59        30              0  89
+## 34 34        81        22              0 103
+## 35 35        25        20              0  45
+## 36 36        56        10              0  66
+## 37 37        70        25              0  95
+## 38 38       100        30              0 130
+## 39 39        50        30              0  80
+## 40 40        30        24              0  54
+## 41 41        65        30              0  95
+## 42 42        77        15              0  92
+## 43 43        90        30              0 120
+## 44 44        60        25              0  85
+## 45 45        70        15              0  85
+## 46 46        64        20              0  84
+## 47 47        65        38              0 103
+## 48 48        30        35              0  65
+## 49 49        85        25              0 110
+## 50 50        30        19              0  49
+## 51 51        70        20              0  90
+## 52 52        60        25              0  85
+## 53 53        30        26              0  56
+## 54 54        60        15              0  75
+## 55 55        80        30              0 110
+## 56 56       102        25              0 127
+## 57 57        65        30              0  95
+## 58 58        30        18              0  48
+## 59 59        70        22              0  92
+## 60 60        15        33              0  48
+## 61 61        67        15              0  82
+## 62 62        75        18              0  93
+## 63 63        81        36              0 117
+## 64 64        27        30              0  57
+## 65 65        33        20              0  53
+## 66 66        19        29              0  48
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 12.5mg/l root\_size mean + standard deviation}
+\NormalTok{root\_12}\FloatTok{.5}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\NormalTok{root\_12}\FloatTok{.5}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 63.90909
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 22.73576
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Root growth inhibition percentage, compared to control sample}
+\NormalTok{root\_limit\_12}\FloatTok{.5}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (root\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_root)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{root\_limit\_12}\FloatTok{.5}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.7785276
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 12.5mg/l stem\_size mean + standard deviation}
+\NormalTok{stem\_12}\FloatTok{.5}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\NormalTok{stem\_12}\FloatTok{.5}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 27.5303
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7.22436
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Stem growth inhibition percentage, compared to control sample}
+\NormalTok{stem\_limit\_12}\FloatTok{.5}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (stem\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_stem)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{stem\_limit\_12}\FloatTok{.5}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -7.411146
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 12.5mg/l sum mean + standard deviation}
+\NormalTok{sum\_12}\FloatTok{.5}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{sum)}
+\NormalTok{sum\_12}\FloatTok{.5}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 91.43939
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 25.94855
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Overall growth inhibition percentage, compared to control sample}
+\NormalTok{sum\_limit\_12}\FloatTok{.5}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (sum\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_sum)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{sum\_limit\_12}\FloatTok{.5}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -2.68764
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Reading data for 6.25mg/l concentration of Cu2+}
+\NormalTok{conc\_6}\FloatTok{.25}\NormalTok{mg }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{\textquotesingle{}../data/6.25mg.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{conc\_6}\FloatTok{.25}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     X root_size stem_size root_branching sum
+## 1   1        64        23              0  87
+## 2   2        66        35              0 101
+## 3   3        25        28              0  53
+## 4   4        65        31              0  96
+## 5   5        75        19              0  94
+## 6   6        66        26              0  92
+## 7   7        60        27              0  87
+## 8   8        62        25              0  87
+## 9   9        20        26              0  46
+## 10 10        95        25              0 120
+## 11 11        60        30              0  90
+## 12 12        64        36              0 100
+## 13 13        11        19              1  30
+## 14 14        45        16              0  61
+## 15 15        50        24              0  74
+## 16 16        79        25              0 104
+## 17 17        22        25              0  47
+## 18 18        63        30              0  93
+## 19 19        56        15              0  71
+## 20 20        38        23              0  61
+## 21 21        40        26              0  66
+## 22 22        54        29              0  83
+## 23 23        47        22              0  69
+## 24 24        50        28              0  78
+## 25 25        39         7              0  46
+## 26 26        25        29              0  54
+## 27 27        79        29              0 108
+## 28 28        76        34              0 110
+## 29 29        20        36              0  56
+## 30 30        74        35              0 109
+## 31 31        66        20              0  86
+## 32 32        70        35              0 105
+## 33 33         0        20              0  20
+## 34 34        90        32              0 122
+## 35 35        40         5              0  45
+## 36 36        49        42              0  91
+## 37 37        50        26              0  76
+## 38 38        72        29              0 101
+## 39 39        46        21              0  67
+## 40 40        60        26              0  86
+## 41 41        78        28              0 106
+## 42 42        68        26              0  94
+## 43 43        70        32              0 102
+## 44 44        69        28              0  97
+## 45 45        69        21              0  90
+## 46 46        11        17              0  28
+## 47 47        57        30              0  87
+## 48 48        59        28              0  87
+## 49 49        38        35              0  73
+## 50 50        84        26              0 110
+## 51 51        69        35              0 104
+## 52 52        77        26              0 103
+## 53 53        64        39              0 103
+## 54 54        89        31              0 120
+## 55 55        75        31              0 106
+## 56 56        54        28              0  82
+## 57 57        54        28              0  82
+## 58 58        60        26              0  86
+## 59 59        42        19              0  61
+## 60 60        59        27              0  86
+## 61 61        90        32              0 122
+## 62 62        75        38              0 113
+## 63 63        65        25              0  90
+## 64 64        48        28              0  76
+## 65 65        60        33              0  93
+## 66 66        90        35              0 125
+## 67 67        43        24              0  67
+## 68 68        56        25              0  81
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 6.25mg/l root\_size mean + standard deviation}
+\NormalTok{root\_6}\FloatTok{.25}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\NormalTok{root\_6}\FloatTok{.25}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 57.44118
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 20.38904
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Root growth inhibition percentage, compared to control sample}
+\NormalTok{root\_limit\_6}\FloatTok{.25}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (root\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_root)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{root\_limit\_6}\FloatTok{.25}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9.420755
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 6.25mg/l stem\_size mean + standard deviation}
+\NormalTok{stem\_6}\FloatTok{.25}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\NormalTok{stem\_6}\FloatTok{.25}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 27.05882
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6.70683
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Stem growth inhibition percentage, compared to control sample}
+\NormalTok{stem\_limit\_6}\FloatTok{.25}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (stem\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_stem)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{stem\_limit\_6}\FloatTok{.25}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -5.57164
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 6.25mg/l sum mean + standard deviation}
+\NormalTok{sum\_6}\FloatTok{.25}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{sum)}
+\NormalTok{sum\_6}\FloatTok{.25}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 84.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 23.63939
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Overall growth inhibition percentage, compared to control sample}
+\NormalTok{sum\_limit\_6}\FloatTok{.25}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (sum\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_sum)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{sum\_limit\_6}\FloatTok{.25}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.10539
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Reading data for 3.125mg/l concentration of Cu2+}
+\NormalTok{conc\_3}\FloatTok{.125}\NormalTok{mg }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{\textquotesingle{}../data/3.125mg.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{conc\_3}\FloatTok{.125}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     X root_size stem_size root_branching sum
+## 1   1        73        29              0 102
+## 2   2        63        33              0  96
+## 3   3        64        22              0  86
+## 4   4        41        21              0  62
+## 5   5        63        23              0  86
+## 6   6        48        25              0  73
+## 7   7        58        16              0  74
+## 8   8         8        26              0  34
+## 9   9        53        29              0  82
+## 10 10        47        16              0  63
+## 11 11        41        26              0  67
+## 12 12        81        24              0 105
+## 13 13        87        35              0 122
+## 14 14        73        24              0  97
+## 15 15        63        22              0  85
+## 16 16        63        15              0  78
+## 17 17        30         6              0  36
+## 18 18         5        12              0  17
+## 19 19        43        32              0  75
+## 20 20        30        10              0  40
+## 21 21        37         8              0  45
+## 22 22        24        26              0  50
+## 23 23        43        20              0  63
+## 24 24        83        23              0 106
+## 25 25        84        24              0 108
+## 26 26        62        28              0  90
+## 27 27        52        25              0  77
+## 28 28        38        16              0  54
+## 29 29         3        30              0  33
+## 30 30        49        26              0  75
+## 31 31        20        15              0  35
+## 32 32        70        26              0  96
+## 33 33        86        20              0 106
+## 34 34        78        16              0  94
+## 35 35        46        17              0  63
+## 36 36        54        22              0  76
+## 37 37        75        22              0  97
+## 38 38        22        17              0  39
+## 39 39        63        23              0  86
+## 40 40        10        17              0  27
+## 41 41        54        27              0  81
+## 42 42        15        75              0  90
+## 43 43        34        14              0  48
+## 44 44        64         8              0  72
+## 45 45        59        16              0  75
+## 46 46        65        30              0  95
+## 47 47        15        24              0  39
+## 48 48        83        32              0 115
+## 49 49        15        22              1  37
+## 50 50        36        34              0  70
+## 51 51        70        42              0 112
+## 52 52        18        12              0  30
+## 53 53        64        31              0  95
+## 54 54        64        25              0  89
+## 55 55        70        30              0 100
+## 56 56        64        26              0  90
+## 57 57        20        34              1  54
+## 58 58        95        16              0 111
+## 59 59        87        20              0 107
+## 60 60        72        24              0  96
+## 61 61        23        20              0  43
+## 62 62        65        33              0  98
+## 63 63        40        20              0  60
+## 64 64        55        28              0  83
+## 65 65        84        34              0 118
+## 66 66        56        13              0  69
+## 67 67        82        34              0 116
+## 68 68        33        18              0  51
+## 69 69        60        27              0  87
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3.125mg/l root\_size mean + standard deviation}
+\NormalTok{root\_3}\FloatTok{.125}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\NormalTok{root\_3}\FloatTok{.125}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 52.10145
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 23.53979
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Root growth inhibition percentage, compared to control sample}
+\NormalTok{root\_limit\_3}\FloatTok{.125}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (root\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_root)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{root\_limit\_3}\FloatTok{.125}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 17.84099
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3.125mg/l stem\_size mean and standard deviation}
+\NormalTok{stem\_3}\FloatTok{.125}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\NormalTok{stem\_3}\FloatTok{.125}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 23.71014
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{stem\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 9.698547
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Stem growth inhibition percentage, compared to control sample}
+\NormalTok{stem\_limit\_3}\FloatTok{.125}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (stem\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_stem)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{stem\_limit\_3}\FloatTok{.125}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7.493432
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# 3.125mg/l sum mean and standard deviation}
+\NormalTok{sum\_3}\FloatTok{.125}\NormalTok{mg }\OtherTok{=} \FunctionTok{mean}\NormalTok{(conc\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{sum)}
+\NormalTok{sum\_3}\FloatTok{.125}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 75.81159
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sd}\NormalTok{(conc\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{sum)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 26.31555
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Overall growth inhibition percentage, compared to control sample}
+\NormalTok{sum\_limit\_3}\FloatTok{.125}\NormalTok{mg }\OtherTok{=} \DecValTok{100} \SpecialCharTok{{-}}\NormalTok{ (sum\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{/}\NormalTok{control\_sum)}\SpecialCharTok{*}\DecValTok{100}
+\NormalTok{sum\_limit\_3}\FloatTok{.125}\NormalTok{mg}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14.86258
+\end{verbatim}
+
+\hypertarget{task-3-4-and-5}{%
+\subsection{Task \#3, \#4 and \#5}\label{task-3-4-and-5}}
+
+Plot the inhibition percentage as a function of the concentration.
+Create a linear model approximation and get the coefficients. Use the
+coefficients to calculate the concentration needed to cause a 50\%
+growth inhibition.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\FloatTok{3.125}\NormalTok{, }\FloatTok{6.25}\NormalTok{, }\FloatTok{12.5}\NormalTok{, }\DecValTok{25}\NormalTok{, }\DecValTok{50}\NormalTok{, }\DecValTok{100}\NormalTok{)}
+\NormalTok{y\_root }\OtherTok{=} \FunctionTok{c}\NormalTok{(root\_limit\_3}\FloatTok{.125}\NormalTok{mg, root\_limit\_6}\FloatTok{.25}\NormalTok{mg, root\_limit\_12}\FloatTok{.5}\NormalTok{mg, root\_limit\_25mg, root\_limit\_50mg, root\_limit\_100mg)}
+\NormalTok{y\_stem }\OtherTok{=} \FunctionTok{c}\NormalTok{(stem\_limit\_3}\FloatTok{.125}\NormalTok{mg, stem\_limit\_6}\FloatTok{.25}\NormalTok{mg, stem\_limit\_12}\FloatTok{.5}\NormalTok{mg, stem\_limit\_25mg, stem\_limit\_50mg, stem\_limit\_100mg)}
+\NormalTok{y\_sum }\OtherTok{=} \FunctionTok{c}\NormalTok{(sum\_limit\_3}\FloatTok{.125}\NormalTok{mg, sum\_limit\_6}\FloatTok{.25}\NormalTok{mg, sum\_limit\_12}\FloatTok{.5}\NormalTok{mg, sum\_limit\_25mg, sum\_limit\_50mg, sum\_limit\_100mg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_root }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(x,y\_root)}
+\FunctionTok{ggplot}\NormalTok{(df\_root, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(x), }\AttributeTok{y=}\NormalTok{y\_root, }\AttributeTok{group=}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label=}\NormalTok{y\_root)) }\SpecialCharTok{+} \FunctionTok{stat\_smooth}\NormalTok{(}\AttributeTok{method=}\StringTok{\textquotesingle{}lm\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Inhibition percentage for root\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{\textquotesingle{}Inhibition percentage\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{\textquotesingle{}Concentration of Cu2+ in mg/l\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{toxicity_files/figure-latex/unnamed-chunk-31-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model\_root }\OtherTok{=} \FunctionTok{lm}\NormalTok{(y\_root }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{data =}\NormalTok{ df\_root)}
+\NormalTok{model\_root}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = y_root ~ x, data = df_root)
+## 
+## Coefficients:
+## (Intercept)            x  
+##      9.5762       0.8567
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b0\_root }\OtherTok{=} \FunctionTok{summary}\NormalTok{(model\_root)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+\NormalTok{b1\_root }\OtherTok{=} \FunctionTok{summary}\NormalTok{(model\_root)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+\NormalTok{ec50\_root }\OtherTok{=}\NormalTok{ (}\DecValTok{50} \SpecialCharTok{{-}}\NormalTok{ b0\_root)}\SpecialCharTok{/}\NormalTok{b1\_root}
+\NormalTok{ec50\_root}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 47.18618
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_stem }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(x,y\_stem)}
+\FunctionTok{ggplot}\NormalTok{(df\_stem, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(x), }\AttributeTok{y=}\NormalTok{y\_stem, }\AttributeTok{group=}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label=}\NormalTok{y\_stem)) }\SpecialCharTok{+} \FunctionTok{stat\_smooth}\NormalTok{(}\AttributeTok{method=}\StringTok{\textquotesingle{}lm\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Inhibition percentage for stem\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{\textquotesingle{}Inhibition percentage\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{\textquotesingle{}Concentration of Cu2+ in mg/l\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{toxicity_files/figure-latex/unnamed-chunk-32-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model\_stem }\OtherTok{=} \FunctionTok{lm}\NormalTok{(y\_stem }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{data =}\NormalTok{ df\_stem)}
+\NormalTok{model\_stem}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = y_stem ~ x, data = df_stem)
+## 
+## Coefficients:
+## (Intercept)            x  
+##     -6.2977       0.2059
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b0\_stem }\OtherTok{=} \FunctionTok{summary}\NormalTok{(model\_stem)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+\NormalTok{b1\_stem }\OtherTok{=} \FunctionTok{summary}\NormalTok{(model\_stem)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+\NormalTok{ec50\_stem }\OtherTok{=}\NormalTok{ (}\DecValTok{50} \SpecialCharTok{{-}}\NormalTok{ b0\_stem)}\SpecialCharTok{/}\NormalTok{b1\_stem}
+\NormalTok{ec50\_stem}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 273.3578
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_sum }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(x,y\_sum)}
+\FunctionTok{ggplot}\NormalTok{(df\_sum, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(x), }\AttributeTok{y=}\NormalTok{y\_sum, }\AttributeTok{group=}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label=}\NormalTok{y\_sum)) }\SpecialCharTok{+} \FunctionTok{stat\_smooth}\NormalTok{(}\AttributeTok{method=}\StringTok{\textquotesingle{}lm\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Inhibition percentage for root + stem\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{\textquotesingle{}Inhibition percentage\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{\textquotesingle{}Concentration of Cu2+ in mg/l\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{toxicity_files/figure-latex/unnamed-chunk-33-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model\_sum }\OtherTok{=} \FunctionTok{lm}\NormalTok{(y\_sum }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{data =}\NormalTok{ df\_sum)}
+\NormalTok{model\_sum}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = y_sum ~ x, data = df_sum)
+## 
+## Coefficients:
+## (Intercept)            x  
+##     12.9925       0.6249
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b0\_sum }\OtherTok{=} \FunctionTok{summary}\NormalTok{(model\_sum)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+\NormalTok{b1\_sum }\OtherTok{=} \FunctionTok{summary}\NormalTok{(model\_sum)}\SpecialCharTok{$}\NormalTok{coefficients[}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{]}
+\NormalTok{ec50\_sum }\OtherTok{=}\NormalTok{ (}\DecValTok{50} \SpecialCharTok{{-}}\NormalTok{ b0\_sum)}\SpecialCharTok{/}\NormalTok{b1\_sum}
+\NormalTok{ec50\_sum}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 59.22509
+\end{verbatim}
+
+\hypertarget{task-6-and-7}{%
+\subsection{Task \#6 and \#7}\label{task-6-and-7}}
+
+Compare the concentration values causing a 50\% inhibition in the root,
+stem and overall. Conclude which part of the plant is most susceptible
+to the toxicant.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ec50 }\OtherTok{=} \FunctionTok{c}\NormalTok{(ec50\_root,ec50\_stem,ec50\_sum)}
+\NormalTok{names }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"root"}\NormalTok{, }\StringTok{"stem"}\NormalTok{, }\StringTok{"sum"}\NormalTok{)}
+\NormalTok{df\_ec50 }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(names, ec50)}
+\NormalTok{df\_ec50}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   names      ec50
+## 1  root  47.18618
+## 2  stem 273.35777
+## 3   sum  59.22509
+\end{verbatim}
+
+In this case we need the lowest concentration able to create a 50\%
+growth inhibition. The table shows this is the value associated with the
+root - i.e.~the root is most susceptible to the toxicant.
+
+\hypertarget{bonus}{%
+\subsection{Bonus}\label{bonus}}
+
+Plot the number of branched roots for each concentration.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{branched }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\FunctionTok{sum}\NormalTok{(conc\_3}\FloatTok{.125}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_branching), }\FunctionTok{sum}\NormalTok{(conc\_6}\FloatTok{.25}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_branching), }\FunctionTok{sum}\NormalTok{(conc\_12}\FloatTok{.5}\NormalTok{mg}\SpecialCharTok{$}\NormalTok{root\_branching), }\FunctionTok{sum}\NormalTok{(conc\_25mg}\SpecialCharTok{$}\NormalTok{root\_branching), }\FunctionTok{sum}\NormalTok{(conc\_50mg}\SpecialCharTok{$}\NormalTok{root\_branching), }\FunctionTok{sum}\NormalTok{(conc\_100mg}\SpecialCharTok{$}\NormalTok{root\_branching))}
+\NormalTok{df\_branched }\OtherTok{=} \FunctionTok{data.frame}\NormalTok{(x, branched)}
+\FunctionTok{ggplot}\NormalTok{(df\_branched, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(x), }\AttributeTok{y=}\NormalTok{branched, }\AttributeTok{group=}\DecValTok{1}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{color=}\StringTok{"brown"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label=}\NormalTok{branched), }\AttributeTok{vjust =} \SpecialCharTok{{-}}\FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ggtitle}\NormalTok{(}\StringTok{\textquotesingle{}Branching for each concentration\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{\textquotesingle{}Number of branched roots\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{\textquotesingle{}Concentration of Cu2+ in mg/l\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{toxicity_files/figure-latex/unnamed-chunk-35-1.pdf}
+
+\end{document}

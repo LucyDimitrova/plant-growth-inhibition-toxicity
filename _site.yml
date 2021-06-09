@@ -1,0 +1,12 @@
+name: "Toxicity"
+output_dir: "docs"
+navbar:
+  title: "Toxicity"
+  left:
+  - text: "Home"
+   href: index.html
+  - text: "Cu2+ Toxicity in plants"
+   href: toxicity.html
+output:
+  html_document:
+ theme: cosmo
